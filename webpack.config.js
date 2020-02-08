@@ -1,18 +1,20 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
+const { preprocess } = require('./svelte.config')
+
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['./src/main.js']
+		bundle: ['./src/main.ts']
 	},
 	resolve: {
 		alias: {
 			svelte: path.resolve('node_modules', 'svelte')
 		},
-		extensions: ['.mjs', '.js', '.svelte'],
+		extensions: ['.ts', '.mjs', '.js', '.svelte'],
 		mainFields: ['svelte', 'browser', 'module', 'main']
 	},
 	output: {
@@ -23,12 +25,19 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.ts$/,
+				use: {
+					loader: 'ts-loader'
+				}
+			},
+			{
 				test: /\.svelte$/,
 				use: {
 					loader: 'svelte-loader',
 					options: {
 						emitCss: true,
-						hotReload: true
+						hotReload: true,
+						preprocess
 					}
 				}
 			},
@@ -40,7 +49,8 @@ module.exports = {
 					 * For developing, use 'style-loader' instead.
 					 * */
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
-					'css-loader'
+					'css-loader',
+					'postcss-loader'
 				]
 			}
 		]
