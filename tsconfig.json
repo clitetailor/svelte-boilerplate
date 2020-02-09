@@ -41,7 +41,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     // "preserveSymlinks": true,
-    "allowUmdGlobalAccess": true,
+    "allowUmdGlobalAccess": true
     // "sourceRoot": "",
     // "mapRoot": "",
     // "inlineSourceMap": true,
