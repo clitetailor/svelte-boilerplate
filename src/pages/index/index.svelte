@@ -8,4 +8,10 @@
   })
 </script>
 
-<a href="/dashboard" data-navigo>Dashboard</a>
+<nav>
+  <a href="/dashboard" data-navigo>Dashboard</a>
+</nav>
+
+<main>
+  <h1>Hello, World!</h1>
+</main>
