@@ -1,11 +1,30 @@
 <script lang="typescript">
-  export let name: string
+  import { onMount } from 'svelte'
+
+  import Home from './pages/index/index.svelte'
+  import Dashboard from './pages/dashboard/dashboard.svelte'
+
+  import { router } from './utils/router'
+
+  let props: any = {
+    component: Home
+  }
+
+  router
+    .on(() => {
+      props = {
+        component: Home
+      }
+    })
+    .on('/dashboard', () => {
+      props = {
+        component: Dashboard
+      }
+    })
+
+  onMount(() => {
+    router.resolve()
+  })
 </script>
 
-<style lang="scss">
-  h1 {
-    color: purple;
-  }
-</style>
-
-<h1>Hello {name}!</h1>
+<svelte:component this={props.component} {...props} />
