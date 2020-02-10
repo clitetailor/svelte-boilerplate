@@ -43,7 +43,7 @@ module.exports = {
   // modulePathIgnorePatterns: [],
   // notify: false,
   // notifyMode: "failure-change",
-  preset: 'jest-puppeteer'
+  // preset: 'jest-puppeteer'
   // projects: undefined,
   // reporters: undefined,
   // resetMocks: false,
@@ -73,7 +73,15 @@ module.exports = {
   // testRunner: "jasmine2",
   // testURL: "http://localhost",
   // timers: "real",
-  // transform: undefined,
+  transform: {
+    '^.+\\.[tj]s$': '<rootDir>/jest.transform.js',
+    '^.+\\.svelte$': [
+      'jest-transform-svelte',
+      {
+        preprocess: require('./svelte.config').preprocess
+      }
+    ]
+  }
   // transformIgnorePatterns: [
   //   "\\\\node_modules\\\\"
   // ],

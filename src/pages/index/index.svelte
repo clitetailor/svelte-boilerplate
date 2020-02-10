@@ -1,16 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
-
-  import { router } from '../../utils/router'
-
-  onMount(() => {
-    router.updatePageLinks()
-  })
+  import Navbar from '../shared/navbar/navbar.svelte'
 </script>
 
-<nav>
-  <a href="/dashboard" data-navigo>Dashboard</a>
-</nav>
+<Navbar></Navbar>
 
 <main>
   <h1>Hello, World!</h1>

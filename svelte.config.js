@@ -1,5 +1,10 @@
-const { scss } = require('svelte-preprocess')
+const { scss, postcss } = require('svelte-preprocess')
 
 module.exports = {
-  preprocess: require('svelte-preprocess')([scss()])
+  preprocess: [
+    require('svelte-preprocess')([
+      scss(),
+      postcss(require('./postcss.config'))
+    ])
+  ]
 }

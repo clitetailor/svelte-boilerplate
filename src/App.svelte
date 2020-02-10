@@ -1,17 +1,17 @@
 <script lang="typescript">
-  import { onMount } from 'svelte'
+  import navaid from 'navaid'
+  import { onMount, onDestroy } from 'svelte'
 
   import Home from './pages/index/index.svelte'
   import Dashboard from './pages/dashboard/dashboard.svelte'
 
-  import { router } from './utils/router'
-
+  let router = navaid()
   let props: any = {
     component: Home
   }
 
   router
-    .on(() => {
+    .on('/', () => {
       props = {
         component: Home
       }
@@ -23,7 +23,11 @@
     })
 
   onMount(() => {
-    router.resolve()
+    router.listen()
+  })
+
+  onDestroy(() => {
+    router.unlisten()
   })
 </script>
 
