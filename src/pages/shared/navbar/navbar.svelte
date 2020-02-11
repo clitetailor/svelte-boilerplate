@@ -1,20 +1,11 @@
 <script lang="typescript">
-  import navaid from 'navaid'
+  import page from 'page'
   import { onMount, onDestroy } from 'svelte'
 
-  let router = navaid()
   let route = location.pathname
 
-  router.on('*', () => {
+  page('*', () => {
     route = location.pathname
-  })
-
-  onMount(() => {
-    router.listen()
-  })
-
-  onDestroy(() => {
-    router.unlisten()
   })
 </script>
 

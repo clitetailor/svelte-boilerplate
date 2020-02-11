@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // "incremental": true,
-    "target": "es6",
+    "target": "esnext",
     "module": "es6",
     // "lib": [],
     // "allowJs": true,
@@ -36,10 +36,7 @@
     "baseUrl": "./",
     // "paths": {},
     // "rootDirs": [],
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ],
+    "typeRoots": ["./types", "node_modules/@types"],
     // "types": [],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

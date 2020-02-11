@@ -1,8 +1,8 @@
-<script>
+<script lang="typescript">
   import Navbar from '../shared/navbar/navbar.svelte'
 </script>
 
-<Navbar></Navbar>
+<Navbar />
 
 <main>
   <h1>Dashboard</h1>

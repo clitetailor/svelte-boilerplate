@@ -43,7 +43,7 @@ module.exports = {
   // modulePathIgnorePatterns: [],
   // notify: false,
   // notifyMode: "failure-change",
-  // preset: 'jest-puppeteer'
+  // preset: undefined,
   // projects: undefined,
   // reporters: undefined,
   // resetMocks: false,
@@ -56,7 +56,7 @@ module.exports = {
   // ],
   // runner: "jest-runner",
   // setupFiles: [],
-  // setupFilesAfterEnv: [],
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
   // snapshotSerializers: [],
   // testEnvironment: "node",
   // testEnvironmentOptions: {},
@@ -76,7 +76,7 @@ module.exports = {
   transform: {
     '^.+\\.[tj]s$': '<rootDir>/jest.transform.js',
     '^.+\\.svelte$': [
-      'jest-transform-svelte',
+      'svelte-jester',
       {
         preprocess: require('./svelte.config').preprocess
       }
