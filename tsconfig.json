@@ -2,9 +2,10 @@
   "compilerOptions": {
     // "incremental": true,
     "target": "esnext",
-    "module": "es6",
+    "module": "esnext",
+    "resolveJsonModule": true,
     // "lib": [],
-    // "allowJs": true,
+    "allowJs": true,
     // "checkJs": true,
     // "jsx": "preserve",
     // "declaration": true,

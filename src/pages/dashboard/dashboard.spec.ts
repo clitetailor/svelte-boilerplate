@@ -1,11 +1,13 @@
 import { render } from '@testing-library/svelte'
 
 import Dashboard from './dashboard.svelte'
+import { setupI18n } from '../../i18n'
 
 describe('Dashboard', () => {
   let container: HTMLElement
 
   beforeEach(() => {
+    setupI18n()
     container = render(Dashboard).container
   })
 

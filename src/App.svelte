@@ -4,6 +4,9 @@
 
   import Home from './pages/index/index.svelte'
   import Dashboard from './pages/dashboard/dashboard.svelte'
+  import { setupI18n } from './i18n/index'
+
+  setupI18n()
 
   let props: any = {
     component: Home
