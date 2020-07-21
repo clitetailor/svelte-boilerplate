@@ -1,6 +1,6 @@
 import { render } from '@testing-library/svelte'
 
-import Dashboard from './dashboard.svelte'
+import Dashboard from './Dashboard.svelte'
 import { setupI18n } from '../../i18n'
 
 describe('Dashboard', () => {

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/svelte'
 
-import Home from './index.svelte'
+import Home from './Home.svelte'
 import { setupI18n } from '../../i18n'
 
 describe('Home', () => {

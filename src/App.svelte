@@ -2,8 +2,8 @@
   import page from 'page'
   import { onMount, onDestroy } from 'svelte'
 
-  import Home from './pages/index/index.svelte'
-  import Dashboard from './pages/dashboard/dashboard.svelte'
+  import Home from './pages/index/Home.svelte'
+  import Dashboard from './pages/dashboard/Dashboard.svelte'
   import { setupI18n } from './i18n/index'
 
   setupI18n()
